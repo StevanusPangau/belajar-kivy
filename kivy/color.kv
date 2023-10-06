@@ -1,0 +1,46 @@
+#:kivy 2.2.1
+#:import utils kivy.utils
+<MyGridLayout>
+
+    firstName: FirstName
+    middleName: MiddleName
+    lastName: LastName
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "FirstName"
+                # Di label tidak bisa ganti background color
+            TextInput:
+                id: FirstName
+                multiline: False
+                # ganti warna input
+                background_color: utils.get_color_from_hex("#FF0000")
+                
+            Label:
+                id: MiddleName
+                text: "MiddleName"
+            TextInput:
+                multiline: False
+                
+            Label:
+                id: LastName
+                text: "LastName"
+            TextInput:
+                multiline: False
+    
+        Button:
+            text: "Submit"
+            font_size: 32
+            on_press: root.press()
+            background_normal: ''
+            # Contoh color format RGB - A
+            # background_color: (0, 0, 1, 1) # Jika ada warna yang angkanya 234 maka untuk memasukannya kedalam kivy memakai rumus 234/255.0
+
+            # Contoh color format HEX
+            background_color: utils.get_color_from_hex("#FF0000")
