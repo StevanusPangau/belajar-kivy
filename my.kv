@@ -1,0 +1,39 @@
+#:kivy 2.2.1
+
+<MyGridLayout>
+
+    firstName: FirstName
+    middleName: MiddleName
+    lastName: LastName
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            # Label akan masuk di kolom1
+            # TextInput akan masuk di kolom2
+            Label:
+                text: "FirstName"
+            TextInput:
+                id: FirstName
+                multiline: False
+                
+            Label:
+                id: MiddleName
+                text: "MiddleName"
+            TextInput:
+                multiline: False
+                
+            Label:
+                id: LastName
+                text: "LastName"
+            TextInput:
+                multiline: False
+    
+        Button:
+            text: "Submit"
+            font_size: 32
+            on_press: root.press()
